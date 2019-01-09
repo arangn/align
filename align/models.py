@@ -14,7 +14,7 @@ class User(models.Model):
     name = models.CharField(max_length=255, null=False)
     password = models.CharField(max_length=255, null=False)
     def __str__(self):
-        return self.name
+        return '%s %s' % (self.name, self.password)
 
 class SavedRoutine(models.Model):
     INTENSITY_CHOICES = (
@@ -35,7 +35,7 @@ class SavedRoutine(models.Model):
     intensity = models.CharField(max_length=12, choices=INTENSITY_CHOICES)
     practice = models.CharField(max_length=15, choices=PRACTICE_CHOICES)
     targets = ArrayField(models.CharField(max_length=200), blank=True)
-    poses = models.ManyToManyField('align.Pose', related_name='routine_poses')
+    pose = models.ManyToManyField('align.Pose', related_name='routine_poses')
     created = models.DateTimeField(auto_now_add=True)
 
 
