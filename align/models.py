@@ -4,8 +4,9 @@ from django.contrib.postgres.fields import ArrayField
 
 class Pose(models.Model):
     name = models.CharField(max_length=255, null=False)
-    image = models.ImageField(upload_to="align/photos/", null=True, blank=True)
+    image = models.ImageField(max_length=500, null=False)
     description = models.CharField(max_length=500, null=False)
+    target = models.CharField(max_length=20, null=False)
 
     def __str__(self):
         return self.name
