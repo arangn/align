@@ -21,8 +21,8 @@ from align import views
 
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    # re_path('api/', include('align.urls')),
-    path('', views.home, name='home'),
+    path('admin/', admin.site.urls),
+    re_path('api/', include('align.urls')),
+    # path('', views.home, name='home'),
 
 ]

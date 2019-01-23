@@ -118,5 +118,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'align-static-bucket')
+STATICFILES_DIRS = [
+  # TODO: configure the name and path to your development static directory
+    os.path.join(BASE_DIR), # static directory (in the top level directory) for local testing
+]
+
 # CSRF behavior
 CSRF_TRUSTED_ORIGINS = ['api.wolframalpha.com']
